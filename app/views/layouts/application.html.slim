@@ -12,11 +12,12 @@ html
       .navbar-brand Ruby
 
       ul.navbar-nav.ml-auto
-        -if current_user
+        - if current_user
           li.nav-item = link_to 'タスク一覧', tasks_path, class: 'nav-linlk'
-          li.nav-item = link_to 'ユーザー一覧', users_path, class: 'nav-linlk'
+          - if current_user.admin?
+            li.nav-item = link_to 'ユーザー一覧', users_path, class: 'nav-linlk'
           li.nav-item = link_to 'ログアウト', logout_path, method: :delete, class: 'nav-linlk'
-        -else
+        - else
           li.nav-item = link_to 'ログイン', login_path, class: 'nav-link'
     .container
       - if flash.notice.present?
