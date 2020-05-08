@@ -44,7 +44,7 @@ describe 'タスク管理機能', type: :system do
     end
   end
 
-  describe '新規投稿機能' do 
+  describe '新規作成機能' do 
     let(:login_user) {user_a}
 
     before do
@@ -53,7 +53,7 @@ describe 'タスク管理機能', type: :system do
       click_button '登録する'
     end
 
-    context '新規登録画面で名称を入力された時' do
+    context '新規作成画面で名称を入力された時' do
       let(:task_name) {'新規作成テストを書く'}
 
       it '正常に投稿される' do 
@@ -61,7 +61,7 @@ describe 'タスク管理機能', type: :system do
       end
     end
 
-    context '新規登録画面で入力されなかった時' do
+    context '新規作成画面で入力されなかった時' do
       let(:task_name) {''}
 
       it 'エラーとなる' do
