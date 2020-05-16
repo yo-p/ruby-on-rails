@@ -49,8 +49,9 @@ class TasksController < ApplicationController
 
   def destroy
     @task.destroy
-    flash[:notice] = "タスク「#{@task.name}」を削除しました"
-    redirect_to tasks_path
+    # head :no_content
+    # flash[:notice] = "タスク「#{@task.name}」を削除しました"
+    # redirect_to tasks_path
   end
 
   private
